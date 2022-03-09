@@ -113,5 +113,32 @@ boundedElastic-2| Publishing = 999
 18:35:46.774 [boundedElastic-2] DEBUG reactor.core.publisher.Operators - onNextDropped: 999
 
 - Overflow IGNORE Strategy
+  Backpressure strategy is ignored, Eventually error will appear, subscriber must handle error
+  
+boundedElastic-2| Publishing = 1
+boundedElastic-1 | Received = 1
+boundedElastic-2| Publishing = 2
+boundedElastic-2| Publishing = 3
+boundedElastic-2| Publishing = 4
+boundedElastic-2| Publishing = 5
+boundedElastic-2| Publishing = 6
+boundedElastic-2| Publishing = 7
+boundedElastic-2| Publishing = 8
+boundedElastic-1 | Received = 2
+boundedElastic-2| Publishing = 9
+...
+boundedElastic-2| Publishing = 996
+boundedElastic-1 | Received = 84
+boundedElastic-2| Publishing = 997
+boundedElastic-2| Publishing = 998
+boundedElastic-2| Publishing = 999
+boundedElastic-1 | Received = 85
+boundedElastic-1 | Received = 86
+boundedElastic-1 | Received = 87
+...
+boundedElastic-1 | Received = 277
+boundedElastic-1 | Received = 278
+boundedElastic-1 | Received = 279
+boundedElastic-1 | Error OverflowException Queue is full: Reactive Streams source doesn't respect backpressure
 
 - Overflow BUFFER Strategy
