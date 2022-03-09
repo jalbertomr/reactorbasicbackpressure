@@ -142,3 +142,22 @@ boundedElastic-1 | Received = 279
 boundedElastic-1 | Error OverflowException Queue is full: Reactive Streams source doesn't respect backpressure
 
 - Overflow BUFFER Strategy
+  subscriber receives all the values using Buffer, out of memory is a possibility.
+
+boundedElastic-2| Publishing = 1
+boundedElastic-2| Publishing = 2
+boundedElastic-2| Publishing = 3
+boundedElastic-2| Publishing = 4
+...  
+boundedElastic-2| Publishing = 996
+boundedElastic-2| Publishing = 997
+boundedElastic-2| Publishing = 998
+boundedElastic-2| Publishing = 999
+boundedElastic-1 | Received = 2
+boundedElastic-1 | Received = 3
+boundedElastic-1 | Received = 4
+boundedElastic-1 | Received = 5  
+...  
+boundedElastic-1 | Received = 997
+boundedElastic-1 | Received = 998
+boundedElastic-1 | Received = 999
