@@ -15,6 +15,7 @@
     <description>Spring Boot Reactor Basic Backpressure</description>
     <properties>
         <java.version>11</java.version>
+        <slf4j-api.version>1.7.36</slf4j-api.version>
     </properties>
     <dependencies>
         <dependency>
@@ -31,6 +32,11 @@
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api.version}</version>
         </dependency>
     </dependencies>
 
